@@ -9,6 +9,8 @@ verticales: dict = {} # Creamos un diccionario vacio #defe
 for count, value in enumerate(abecedario):  # Creamos un diccionario que mapea cada letra a su posición en el abecedario
     verticales[value] = count
 
+n = 0  # Inicializamos la variable n en 0
+
 """
 Por: Manuel Pebe Pueyrredon, Borja Izurieta y Federico Diaz Nemeth
 
@@ -157,8 +159,12 @@ def single_player() -> None:  # Función para el modo de un solo jugador
             os.system("clear")  # Limpia la pantalla
             print("Tablero del oponente")  # Imprime el tablero del oponente
             show_tablero(tableroataque)  # Muestra el tablero de ataque
-            coor = get_coords(input(
-                "Ingrese las coordenadas del barco: "))  # Solicita al jugador que ingrese las coordenadas del disparo
+            try:
+                coor = get_coords(input("Ingrese las coordenadas del barco: "))  # Solicita al jugador que ingrese las coordenadas del disparo
+            except:
+                print("Coordenadas invalidas")  # Informa al jugador que las coordenadas son inválidas
+                continue  # Continúa con el siguiente ciclo del bucle
+
             if coordenadas_validas(coor[0], coor[1], n):  # Verifica si las coordenadas son válidas
                 count += disparar(tablero, tableroataque,
                                   coor)  # Realiza un disparo y suma el resultado al contador de barcos hundidos
