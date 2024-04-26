@@ -2,7 +2,20 @@ from os import system  # Importamos la funcion system de la libreria os para lim
 from typing import List  # Importamos la clase List de la libreria typing para poder definir listas
 import random
 
-n: int = 5  # Definimos el tamaño del tablero
+'''
+    Por: Diaz Nemeth, Izurieta, Pebe Pueyrredon
+    Fecha: 26/04/2024
+    Descripcion: El programa es un juego de batalla naval, en el cual el usuario puede elegir si quiere jugar solo o con un amigo.
+    En caso de elegir jugar solo, el usuario debera ingresar las coordenadas de los disparos.
+    En caso de elegir jugar con un amigo, el usuario debera ingresar las coordenadas de los barcos y los disparos.
+    El juego termina cuando se hunden todos los barcos.
+    El programa imprime el tablero con los barcos y los disparos acertados y fallados.
+    El programa tambien imprime la cantidad de barcos hundidos y la cantidad de disparos acertados y fallados.
+    El programa tambien imprime el tablero de ataque, donde se muestra con una X los barcos hundidos, con una O las casillas no atacadas y con una A las casillas atacadas pero sin barco.
+    
+'''
+
+n: int = int(input("Ingrese el tamaño del tablero"))  # Definimos el tamaño del tablero
 
 cantidadbarcos: int = int(input("Ingrese la cantidad de barcos con la que quiere jugar "))  # Definimos la cantidad de barcos
 
