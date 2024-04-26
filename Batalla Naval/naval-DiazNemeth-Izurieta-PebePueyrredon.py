@@ -4,8 +4,7 @@ import random
 
 n: int = 5  # Definimos el tamaño del tablero
 
-cantidadbarcos: int = int(
-    input("Ingrese la cantidad de barcos con la que quiere jugar "))  # Definimos la cantidad de barcos
+cantidadbarcos: int = int(input("Ingrese la cantidad de barcos con la que quiere jugar "))  # Definimos la cantidad de barcos
 
 cantidaddisparada: int = 0  # Definimos la cantidad de disparos
 
@@ -78,7 +77,7 @@ if opcion == "s":  # si la opcion es s, se ejecuta el siguiente codigo
     cantidaddisparada1: int = 0  # Cuenta disparos de J1
     cantidaddisparada2: int = 0  # Cuenta disparos de J2
 
-    while not (jugador1 or jugador2):  # No gano ninguno todavia
+    while not (jugador1 or jugador2) or cantidaddisparada1 == cantidaddisparos or cantidaddisparada2 == cantidaddisparos:  # No gano ninguno todavia
         system("clear")
         print("Jugador 1")
         coorX: int = int(input("Ingrese la coordenada X "))  # Pide coordenadas de disparo
